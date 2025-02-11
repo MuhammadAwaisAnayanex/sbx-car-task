@@ -26,7 +26,11 @@ body {
   margin: 0 12px;
 }
 header{
-  position: fixed;
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: #ffff;
+
 }
 header .side-bar-menu{
   top: 34px;
@@ -58,4 +62,96 @@ header .side-bar-menu ul li a{
 header .side-bar-menu ul li a:hover{
   border-color: #565656;
 }
+.search-input{
+  position: absolute;
+  left: -235px;
+}
+.search-input input{
+  padding: 10px 44px 10px 16px;
+  transition: .35s;
+  border: 1px solid #949494;
+}
+.search-input input:focus-visible{
+  outline: unset;
+  background-color: #EDEDED;
+}
+header .bottom-header{
+  padding: 15px 0px;
+}
+header .bottom-header ul{
+  gap: 50px;
+}
+header .bottom-header ul li a{
+  font-size: 16px;
+  line-height: 24px;
+  color: rgb(101, 101, 101);
+  padding: 0 0 15px 0;
+  border-bottom: 5px solid transparent;
+}
+header .bottom-header ul li a:hover{
+  color: #656565;
+  border-color: #565656;
+}
+span.swiper-pagination-bullet {
+  width: 36px;
+  height: 4px;
+  background-color: #ebebeb;
+  transition: background-color .2slinear;
+  border-radius: 0;
+}
 
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: auto;
+  width: auto;
+  left: 30px;
+  bottom: 20px;
+  transform: none;
+  opacity: 1;
+}
+/* .swiper-slide img{
+  height: 600px;
+  object-fit: cover;
+} */
+.swiper-button-next {
+  color: white !important;
+}
+.swiper-button-prev {
+  color: white !important;
+}
+.swiper-slide .car-details{
+  bottom: 70px;
+  left: 45px;
+}
+.swiper-slide .car-year{
+font-size: 32px;
+line-height: 38px;
+color: rgba(255, 255, 255, 0.7);
+}
+.swiper-slide .car-name{
+  font-size: 56px;
+  line-height: 67px;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+.swiper-slide .car-model{
+  font-size: 16px;
+  line-height: 19px;
+  color:rgba(255, 255, 255, 0.8);
+}
+.swiper-slide .bid-now-btn{
+  position: absolute;
+  right: 45px;
+  bottom: 80px;
+  background-color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+  color: #505050;
+  padding: 15px;
+}
+.swiper-slide .bid-now-btn:hover{
+  background-color: #6e6e6e !important;
+    border-color: #6e6e6e;
+    color: #fff;
+}
+.swiper.swiper-initialized.swiper-horizontal {
+  margin-top: 1px;
+}

@@ -4,7 +4,7 @@ export const TopBar = () => {
   return (
     <>
     <div className="top-bar">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-3">
             <ul className='flex items-center'>
                 <li><a href="#">US +1 323-407-8523</a></li>
                 <div className="divider"></div>

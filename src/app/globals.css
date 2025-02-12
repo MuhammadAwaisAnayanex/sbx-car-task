@@ -2,143 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root Variables */
 :root {
   --black-color: rgb(16, 16, 16);
-  --gray-color:#a9a9a9;
+  --gray-color: #a9a9a9;
+  --border-color: #949494;
+  --hover-color: #565656;
+  --light-gray: #ededed;
 }
 
 body {
   font-family: "Proxima Nova", sans-serif;
 }
-.top-bar{
-  background-color: #ededed;
-  padding: 5px 0px;
+
+/* Top Bar */
+.top-bar {
+  background-color: var(--light-gray);
+  padding: 5px 0;
 }
-.top-bar ul li a{
+
+.top-bar ul li a {
   font-size: 14px;
   line-height: 21px;
   color: var(--black-color);
 }
-.divider{
+
+.divider {
   width: 1px;
   height: 14px;
   background-color: var(--gray-color);
   margin: 0 12px;
 }
-header{
-  position: sticky;
-  z-index: 999;
-  top: 0;
-  background-color: #ffff;
 
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
 }
-header .side-bar-menu{
-  top: 34px;
+
+header .top-header {
+  border-bottom: 1px solid #efefef;
+  padding: 20px 0;
 }
-header .top-header{
-  border-bottom: 1px solid #EFEFEF;
-  padding: 20px 0px;
-}
-header .site-logo img{ 
+
+header .site-logo img {
   height: 46px;
 }
+
 header .sign-btn {
   font-size: 16px;
   color: var(--black-color);
+  transition: color 0.3s ease;
 }
-header .sign-btn:hover{
+
+header .sign-btn:hover {
   color: #505050;
 }
-header .side-bar-menu ul li a{
+
+/* Sidebar Menu */
+header .side-bar-menu {
+  top: 34px;
+}
+
+header .side-bar-menu ul li a {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   color: var(--black-color);
-  border-bottom: 5px solid transparent;
-  padding:0px 0px 10px;
   display: inline-block;
-  margin: 0px 0px 15px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid transparent;
+  transition: border-color 0.3s ease;
 }
-header .side-bar-menu ul li a:hover{
-  border-color: #565656;
+
+header .side-bar-menu ul li a:hover {
+  border-color: var(--hover-color);
 }
-.search-input{
+
+/* Search Input */
+.search-input {
   position: absolute;
   left: -235px;
 }
-.search-input input{
+
+.search-input input {
   padding: 10px 44px 10px 16px;
-  transition: .35s;
-  border: 1px solid #949494;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.35s ease;
 }
-.search-input input:focus-visible{
-  outline: unset;
-  background-color: #EDEDED;
+
+.search-input input:focus-visible {
+  outline: none;
+  background-color: var(--light-gray);
 }
-header .bottom-header{
-  padding: 15px 0px;
+
+/* Bottom Header */
+header .bottom-header {
+  padding: 15px 0;
 }
-header .bottom-header ul{
+
+header .bottom-header ul {
   gap: 50px;
 }
-header .bottom-header ul li a{
+
+header .bottom-header ul li a {
   font-size: 16px;
   line-height: 24px;
   color: rgb(101, 101, 101);
-  padding: 0 0 15px 0;
+  padding-bottom: 15px;
   border-bottom: 5px solid transparent;
+  transition: color 0.3s, border-color 0.3s ease;
 }
-header .bottom-header ul li a:hover{
+
+header .bottom-header ul li a:hover {
   color: #656565;
-  border-color: #565656;
+  border-color: var(--hover-color);
 }
+
+/* Swiper Slider */
 span.swiper-pagination-bullet {
   width: 36px;
   height: 4px;
   background-color: #ebebeb;
-  transition: background-color .2slinear;
+  transition: background-color 0.2s ease;
   border-radius: 0;
 }
 
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-  top: auto;
-  width: auto;
+.swiper-pagination {
   left: 30px;
   bottom: 20px;
-  transform: none;
+  width: auto;
   opacity: 1;
 }
-/* .swiper-slide img{
-  height: 600px;
-  object-fit: cover;
-} */
-.swiper-button-next {
-  color: white !important;
-}
+
+.swiper-button-next,
 .swiper-button-prev {
   color: white !important;
 }
-.swiper-slide .car-details{
+
+/* Car Details on Swiper Slide */
+.swiper-slide .car-details {
   bottom: 70px;
   left: 45px;
 }
-.swiper-slide .car-year{
-font-size: 32px;
-line-height: 38px;
-color: rgba(255, 255, 255, 0.7);
+
+.swiper-slide .car-year {
+  font-size: 32px;
+  line-height: 38px;
+  color: rgba(255, 255, 255, 0.7);
 }
-.swiper-slide .car-name{
+
+.swiper-slide .car-name {
   font-size: 56px;
   line-height: 67px;
-  color: rgb(255, 255, 255);
   font-weight: 700;
+  color: white;
 }
-.swiper-slide .car-model{
+
+.swiper-slide .car-model {
   font-size: 16px;
   line-height: 19px;
-  color:rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
-.swiper-slide .bid-now-btn{
+
+/* Bid Now Button */
+.swiper-slide .bid-now-btn {
   position: absolute;
   right: 45px;
   bottom: 80px;
@@ -146,12 +177,83 @@ color: rgba(255, 255, 255, 0.7);
   border: 1px solid #f0f0f0;
   color: #505050;
   padding: 15px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-.swiper-slide .bid-now-btn:hover{
+
+.swiper-slide .bid-now-btn:hover {
   background-color: #6e6e6e !important;
-    border-color: #6e6e6e;
-    color: #fff;
+  border-color: #6e6e6e;
+  color: white;
 }
-.swiper.swiper-initialized.swiper-horizontal {
-  margin-top: 1px;
+
+/* Auctions Section */
+.auctions .auction-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+}
+
+.auctions button {
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+}
+
+/* Modal */
+.modal {
+  z-index: 9999;
+}
+
+.modal .modal-body {
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  overflow: auto;
+}
+
+.modal .model-header {
+  background-color: #efefef;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .site-logo img {
+  height: 35px;
+}
+
+.modal .close-btn img {
+  width: 35px;
+}
+
+.modal h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: black;
+}
+
+.modal p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: rgb(81, 81, 81);
+}
+
+/* Modal Country Buttons */
+.modal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.modal ul li button {
+  padding: 16px 20px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.modal ul li button.active {
+  background-color: #f0f0f0;
 }

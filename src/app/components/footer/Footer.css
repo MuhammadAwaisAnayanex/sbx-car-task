@@ -1,0 +1,69 @@
+.top-footer{
+    padding: 60px 0px;
+    border-top: 1px solid  #efefef;
+}
+.social-icon img{
+    max-width: 24px;
+}
+.social-icon ul{
+    gap: 25px;
+}
+.social-icon ul li a:hover{
+    opacity: .35;
+}
+.text-content p{
+    font-family: 16px;
+    color:rgb(81, 81, 81);
+    font-weight: 400;
+    line-height: 26px;
+}
+.input input{
+    padding: 13px;
+    border: 1px solid #949494;
+}
+.input input:focus{
+    border-color: #9c9c9c;
+    background: #f0f0f0;
+    color: #101010;
+    outline:unset;
+}
+.input button{
+    font-size: 16px;
+    line-height: 19px;
+    padding: 13px;
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    color: #505050;
+}
+.input button:hover{
+    background-color: #6e6e6e !important;
+    border-color: #6e6e6e;
+    color: #fff;
+}
+.footer-menu ul li{
+    list-style-type: disc;
+    color: #A8A8A8;
+}
+ul li::marker {
+    font-size: 20px; /* Increase bullet size */
+    color: #A8A8A8;
+}
+.footer-menu ul li a{
+    font-size: 16px;
+    line-height: 24px;
+    color: #A8A8A8;
+    font-weight: 400;
+}
+.footer-menu ul li a:hover{
+    color: rgb(16, 16, 16)
+}
+.bottom-footer{
+    background-color: #FAFAFA;
+    padding: 20px;
+}
+.bottom-footer p{
+    font-size: 14px;
+    line-height: 21px;
+    color: rgb(80, 80, 80);
+    text-align: center;
+}

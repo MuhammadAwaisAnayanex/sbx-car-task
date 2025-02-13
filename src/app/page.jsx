@@ -184,13 +184,13 @@ export default function Home() {
       {/* Car Card Section */}
       <section className="car-card-section">
         <div className="container mx-auto px-3">
-          <div className="auctions py-8">
+          <div className="auctions py-5 lg:py-8">
             <span className="me-2 auction-text">Auctions:</span>
             <button onClick={() => setIsModalOpen(true)}>Country: <span className="underline">{selectedCountry}</span></button>
           </div>
 
           {/* Filtered Car List */}
-          <div className="grid grid-cols-3">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
             {filteredCars.map((item, index) => (
               <div className="grid-item" key={index}>
                 <Card carData={item} />
@@ -212,7 +212,8 @@ export default function Home() {
                 <button onClick={() => setIsModalOpen(false)}><Image src={deleteIcon} title="delete icon" /></button>
               </div>
             </div>
-            <div className="modal-heading py-7">
+            <div className="modal-content">
+            <div className="modal-heading py-3 md:py-5 lg:py-7">
               <h2 className="">Select Country</h2>
               <p>Filter vehicles by country</p>
             </div>
@@ -232,6 +233,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            </div>
           </div>
         </div>
       )}

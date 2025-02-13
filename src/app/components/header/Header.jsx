@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react"; // Icons from lucide-react
 import siteLogo from "../../assets/sbx-site-logo.svg";
 import searchIcon from "../../assets/search-icon.svg";
+import signInIcon from "../../assets/signIn-icon.svg"
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ const Header = () => {
           </div>
 
           {/* 🟢 Sign In & Search */}
-          <div className="sign-in flex items-center gap-3 relative">
+          <div className="sign-in flex items-center gap-5 xl:gap-3 relative">
             {/* 🔍 Search Icon */}
             <button onClick={() => setSearchOpen(!searchOpen)} className="focus:outline-none">
               <Image src={searchIcon} alt="Search Icon" width={20} height={20} />
@@ -58,7 +59,8 @@ const Header = () => {
 
             {/* 🟡 Sign In Button */}
             <button className="sign-btn">
-              Sign In
+              <span className="hidden xl:inline">Sign In</span>
+              <span className="xl:hidden"><Image className="signIn-logo" src={signInIcon} alt="signIn icon" /></span>
             </button>
           </div>
         </div>
@@ -72,6 +74,7 @@ const Header = () => {
 
           {/* 🟡 Menu Items */}
           <nav className="mt-16 px-3">
+          <h4 className="lg:hidden pb-5">Menu</h4>
             <ul>
               <li><a href="#">Actions</a></li>
               <li><a href="#">Preview</a></li>
@@ -85,10 +88,10 @@ const Header = () => {
         </div>
 
         {/* 🔴 Overlay (Click Outside to Close) */}
-        {menuOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setMenuOpen(false)}></div>}
+        {menuOpen && <div className="fixed  bg-black bg-opacity-50 z-40" onClick={() => setMenuOpen(false)}></div>}
 
         <div className="bottom-header">
-            <ul className="flex items-center justify-center">
+            <ul className="flex items-center justify-center flex-wrap">
                 <li><a href="#">Auctions</a></li>
                 <li><a href="#">Preview</a></li>
                 <li><a href="#">Results</a></li>

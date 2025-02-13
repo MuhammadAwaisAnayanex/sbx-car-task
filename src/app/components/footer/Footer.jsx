@@ -13,8 +13,8 @@ const Footer = () => {
     <>
     <div className="container mx-auto px-3">
         <div className="top-footer">
-        <div className="grid grid-cols-4 gap-14">
-            <div className="grid-item flex flex-col gap-7">
+        <div className="lg:grid lg:grid-cols-4 lg:gap-14 gap-5 flex flex-wrap justify-between  items-center">
+            <div className="grid-item flex flex-wrap justify-center lg:flex-col lg:gap-7 gap-5 sm:justify-between lg:justify-start basis-full">
                 <div className="site-logo">
                     <a href="#"><Image src={footerSiteLogo} title='footer site logo'/></a>
                 </div>
@@ -29,7 +29,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <div className="grid-item flex flex-col gap-7">
+            <div className="grid-item flex flex-col lg:gap-7 gap-5  basis-full md:basis-[40%] ">
                 <div className="text-content">
                 <p>Get the latest updates by subscribing to our newsletter.</p>
                 </div>
@@ -37,7 +37,7 @@ const Footer = () => {
                     <input type="text" placeholder='Email Adress'/> <button>Subscribe</button>
                 </div>
             </div>
-            <div className="grid-item footer-menu flex justify-end ">
+            <div className="grid-item footer-menu flex lg:justify-end justify-center md:basis-[25%]  basis-50 ">
                 <ul>
                     <li><a href="#">Auctions</a></li>
                     <li><a href="#">Brands</a></li>
@@ -47,7 +47,7 @@ const Footer = () => {
                     <li><a href="#">Auction Results</a></li>
                 </ul>
             </div>
-            <div className="grid-item footer-menu flex justify-center">
+            <div className="grid-item footer-menu flex lg:justify-center justify-center md:basis-[25%] basis-50">
             <ul>
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Team</a></li>

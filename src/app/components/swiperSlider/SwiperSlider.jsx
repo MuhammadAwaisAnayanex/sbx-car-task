@@ -23,6 +23,7 @@ import sliderImg14 from "../../assets/slider-img-14.webp";
 import Image from 'next/image';
 
 const SwiperSlider = () => {
+  
   const carImages = [
     { image: sliderImg1, name: "Lamborghini",year:"2022",model:"Huracan EVO Coupe " },
     { image: sliderImg2, name: "Audi",year:"2020",model:"R8 5.2 Quattro V10 2D Coupe" },
@@ -42,42 +43,44 @@ const SwiperSlider = () => {
 
   return (
     <>
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 5000 }}
-        loop={true}
-      >
-        {carImages.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div style={{ position: 'relative', height: '500px' }}>
-              <Image
-                src={item.image}
-                alt={`Slide ${index + 1}`}
-                fill // Use `fill` to make the image cover the container
-                style={{ objectFit: 'cover' }}
-              />
-              <div className="car-details" style={{position: 'absolute',}}>
-              <span className='car-year'>
-                {item.year}
-              </span>
-              <h2 className='car-name'>
-                {item.name}
-              </h2>
-              <span className='car-model'>
-                {item.model}
-              </span>
-              </div>
-            </div>
-            <button className='bid-now-btn'>
-                Bid Now
-            </button>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+<Swiper
+  modules={[Navigation, Pagination, Autoplay]}
+  spaceBetween={30}
+  slidesPerView={1}
+  navigation={{
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+  }}
+  pagination={{ clickable: true }}
+  autoplay={{ delay: 5000 }}
+  loop={true}
+>
+  {carImages.map((item, index) => (
+    <SwiperSlide key={index}>
+      <div className='img-slider-wrapper'>
+        <Image
+          src={item.image}
+          alt={`Slide ${index + 1}`}
+          fill
+          style={{ objectFit: 'cover' }}
+        />
+        <div className="car-details">
+          <span className='car-year'>{item.year}</span>
+          <h2 className='car-name'>{item.name}</h2>
+          <span className='car-model'>{item.model}</span>
+        </div>
+      </div>
+      <button className='bid-now-btn'>Bid Now</button>
+    </SwiperSlide>
+  ))}
+  
+  {/* ✅ Custom Navigation Buttons (Inside Swiper Container) */}
+  <button className="custom-prev">❮</button>
+  <button className="custom-next">❯</button>
+
+</Swiper>
+
+
     </>
   );
 };

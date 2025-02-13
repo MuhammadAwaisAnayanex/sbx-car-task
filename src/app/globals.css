@@ -430,7 +430,7 @@ object-fit: cover;
   width: 100%;
 }
 .top-footer {
-  padding: 35px 20px;
+  padding: 35px 30px !important;
 }
 }
 @media only screen and (max-width: 576px) {
@@ -472,9 +472,7 @@ line-height: 24px;
   font-size: 18px;
   line-height: 33px;
 }
-.top-footer {
-  padding: 35px 0 20px;
-}
+
 }
 @media only screen and (max-width: 480px) {
   .top-bar ul li a {
